@@ -1,0 +1,12 @@
+<mat-card>
+  <img src="assets/cars-images/{{ userCar.imagePath }}" alt="car image" [routerLink]="moreInformation" style="cursor: pointer">
+  <div class="car-information">
+    <mat-card-title>{{ userCar.brand }} {{ userCar.model }}</mat-card-title>
+    <span>Seating: {{ userCar.seating }}</span>
+    <span>Transmission: {{ userCar.manual ? "Manual" : "Automatic" }}</span>
+    <span>Mileage: {{ userCar.mileage }}</span>
+    <span>Year: {{ userCar.year }}</span>
+    <span>Extra: {{ userCar.extraInformation }}</span>
+  </div>
+
+</mat-card>

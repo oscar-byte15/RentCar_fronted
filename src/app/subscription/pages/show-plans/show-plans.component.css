@@ -1,0 +1,49 @@
+.accent {
+  background-color: #FFC107;
+}
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto 0;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.plans-container {
+  display: flex;
+  flex-direction: row;
+}
+
+mat-card {
+  display: flex;
+  width: 200px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+mat-card-actions {
+  margin: auto auto 0 auto;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-top: 8px;
+}
+
+span {
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  .plans-container {
+    flex-direction: column;
+  }
+
+  mat-card {
+    margin: 20px auto;
+  }
+}

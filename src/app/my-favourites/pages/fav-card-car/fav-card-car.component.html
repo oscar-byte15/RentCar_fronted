@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="container-data">
+    <mat-drawer-container>
+      <mat-drawer-content>
+        <mat-card>
+          <img src="assets/cars-images/{{ car.imagePath }}" alt="car image">
+          <div class="car-information">
+            <mat-card-title>{{ car.brand }} {{ car.model }}</mat-card-title>
+            <span>Seating: {{ car.seating }}</span>
+            <span>Transmission: {{ car.manual ? "Manual" : "Automatic" }}</span>
+            <span>Mileage: {{ car.mileage }}</span>
+            <span>Year: {{ car.year }}</span>
+            <a [routerLink]="moreInformationUrl">See more</a>
+          </div>
+        </mat-card>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+  <mat-divider></mat-divider>
+</div>

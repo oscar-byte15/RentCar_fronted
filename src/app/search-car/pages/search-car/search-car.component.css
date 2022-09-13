@@ -1,0 +1,100 @@
+.accent {
+  background-color: #FFC107;
+}
+
+.primary {
+  background-color: #1976D2;
+  color: white;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #FFC107!important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #FFC107;
+}
+
+.form-location-date {
+  width: 100%;
+  height: 100px;
+}
+
+mat-drawer-container {
+  height: 100vh;
+}
+
+mat-drawer {
+  width: 300px;
+  margin: auto 0 auto;
+  padding: 10px;
+}
+
+mat-drawer-content {
+  padding: 10px;
+}
+
+h2 {
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+mat-toolbar {
+  height: 120px;
+}
+
+mat-icon {
+  font-size: 16px;
+}
+
+.filter-button {
+  display: none;
+}
+
+mat-form-field {
+  max-width: 350px;
+  margin-right: 10px;
+}
+
+form {
+  width: 100%;
+}
+
+.search-button {
+  float: right;
+}
+
+@media (max-width: 950px) {
+  .filter-button {
+    display: inline;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-areas: "form"
+                          "filter";
+    height: 250px;
+    grid-auto-rows: 200px 50px;
+    margin-bottom: 20px;
+  }
+
+  form {
+    grid-area: form;
+    display: grid;
+    margin-bottom: 20px;
+  }
+
+  mat-form-field {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  mat-drawer-content button {
+    height: 50px;
+  }
+}

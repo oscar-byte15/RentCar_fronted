@@ -1,0 +1,43 @@
+.accent {
+  background-color: #FFC107;
+}
+
+mat-card {
+  margin-bottom: 8px;
+  min-height: 200px;
+  max-height: 350px;
+  display: grid;
+  grid-template-areas: "image content rent";
+  grid-template-columns: 200px minmax(auto, 300px) auto;
+}
+
+mat-card > img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto 0 auto;
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+}
+
+.car-information {
+  grid-area: content;
+  margin-left: 20px;
+}
+
+span {
+  display: block;
+}
+
+.input-number {
+  width: 70px;
+}
+
+.rent-price {
+  font-size: 30px;
+}
+
+.edit-button {
+  float: right;
+}

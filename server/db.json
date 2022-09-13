@@ -1,0 +1,356 @@
+{
+  "clients": [
+    {
+      "id": "1",
+      "names": "Sofia Diana",
+      "lastNames": "Bazan Dulanto",
+      "address": "1011 C Alfredo Salazar San Isidro",
+      "cellphoneNumber": "999123456",
+      "averageResponsibility": 90,
+      "responseTime": 5,
+      "rate": 4.6,
+      "imagePath": "sofia.jpg",
+      "planId": "",
+      "email": "sofiabaz@gmail.com",
+      "password": "sofiabaz"
+    },
+    {
+      "id": "2",
+      "names": "Martin Fernando",
+      "lastNames": "Quevedo Mendoza",
+      "address": "Jr. Hipólito Archuleta # 297 Piso 7 San Miguel",
+      "cellphoneNumber": "999123765",
+      "averageResponsibility": 85,
+      "responseTime": 7,
+      "rate": 4.2,
+      "imagePath": "Juan.jpg",
+      "planId": "2",
+      "email": "martinque@gmail.com",
+      "password": "martinque"
+    },
+    {
+      "id": "3",
+      "names": "María Paula Daniela",
+      "lastNames": "Treviño Armas",
+      "address": "Urb. Felipe Salgado # 573 Lince",
+      "cellphoneNumber": "987654321",
+      "averageResponsibility": 95,
+      "responseTime": 4,
+      "rate": 4.5,
+      "imagePath": "",
+      "planId": "3",
+      "email": "mariatrevi@gmail.com",
+      "password": "mariatrevi"
+    },
+    {
+      "id": "9db6887b-29e5-479c-8540-fbf0427c98ed",
+      "names": "eliana",
+      "lastNames": "martinez",
+      "address": "Av. Sanchez",
+      "cellphoneNumber": "988122111",
+      "averageResponsibility": -1,
+      "responseTime": -1,
+      "rate": -1,
+      "imagePath": "",
+      "planId": "",
+      "email": "eliana@gmail.com",
+      "password": "Password1"
+    }
+  ],
+  "languages": [
+    {
+      "id": "1",
+      "name": "Spanish"
+    },
+    {
+      "id": "2",
+      "name": "English"
+    },
+    {
+      "id": "3",
+      "name": "Portuguese"
+    },
+    {
+      "id": "4",
+      "name": "French"
+    }
+  ],
+  "clientLanguages": [],
+  "clientSocialNetworks": [
+    {
+      "id": "1",
+      "clientId": "1",
+      "address": "https://www.facebook.com/",
+      "socialname": "facebook"
+    }
+  ],
+  "clientsComments": [
+    {
+      "id": "1",
+      "clientId": "1",
+      "clientCommentId": "2",
+      "date": "14/8/2021",
+      "starts": 4,
+      "comment": "I consider that she is a very responsible renter. In my attention she prepared all the papers and sanitary accessories for her."
+    },
+    {
+      "id": "1",
+      "clientId": "1",
+      "clientCommentId": "3",
+      "date": "2/8/2021",
+      "starts": 5,
+      "comment": "He took good care of me. The car is in perfect condition. And also he gave me advice on how to drive that vehicle."
+    }
+  ],
+  "cars": [
+    {
+      "id": "1",
+      "address": "1011 C Alfredo Salazar San Isidro",
+      "brand": "Toyota",
+      "year": 2012,
+      "model": "Focus",
+      "mileage": 90000,
+      "seating": 4,
+      "manual": false,
+      "carValueInDollars": 13000,
+      "extraInformation": "The car has leather seats and new tires",
+      "imagePath": "ford-focus.jpeg",
+      "rate": 4,
+      "rentAmountDay": 45,
+      "clientId": "1"
+    },
+    {
+      "id": "2",
+      "address": "Urb. Felipe Salgado # 573 Surco",
+      "brand": "Chevrolet",
+      "year": 2019,
+      "model": "Cruze",
+      "mileage": 12000,
+      "seating": 5,
+      "manual": false,
+      "carValueInDollars": 11000,
+      "extraInformation": "The paint on the car is new.",
+      "imagePath": "chevrolet-cruze.jpg",
+      "rate": 5,
+      "rentAmountDay": 60,
+      "clientId": "2"
+    },
+    {
+      "id": "3",
+      "address": "Av. Sofía Niño # 3 Piso 51 San Isidro",
+      "brand": "Toyota",
+      "year": 2021,
+      "model": "Corolla",
+      "mileage": 7000,
+      "seating": 5,
+      "manual": true,
+      "carValueInDollars": 18000,
+      "extraInformation": "The car is new",
+      "imagePath": "toyota-corolla.jfif",
+      "rate": 5,
+      "rentAmountDay": 80,
+      "clientId": "3"
+    },
+    {
+      "id": "4",
+      "address": "Av. Sofía Niño # 3 Piso 51 San Isidro",
+      "brand": "Nissan",
+      "year": 2019,
+      "model": "Versa",
+      "mileage": 15000,
+      "seating": 5,
+      "manual": true,
+      "carValueInDollars": 20000,
+      "extraInformation": "The paint is new",
+      "imagePath": "nissan-versa.jpg",
+      "rate": 4,
+      "rentAmountDay": 55,
+      "clientId": "2"
+    }
+  ],
+  "my-messages": [
+    {
+      "id": "1",
+      "description": "INTENTO 1",
+      "message": "HOLA"
+    },
+    {
+      "id": "1",
+      "description": "INTENTO 2",
+      "message": "HOLAA"
+    },
+    {
+      "id": "1",
+      "description": "INTENTO 3",
+      "message": "HOLAAA"
+    }
+  ],
+  "mechanicConditions": [
+    {
+      "id": "1",
+      "name": "Regular"
+    },
+    {
+      "id": "2",
+      "name": "Good"
+    },
+    {
+      "id": "3",
+      "name": "Excellent"
+    }
+  ],
+  "carsMechanicConditions": [
+    {
+      "id": "1",
+      "carId": "1",
+      "mechanicConditionId": "2"
+    },
+    {
+      "id": "2",
+      "carId": "2",
+      "mechanicConditionId": "3"
+    }
+  ],
+  "categoryCars": [
+    {
+      "id": "1",
+      "name": "Little"
+    },
+    {
+      "id": "2",
+      "name": "Medium"
+    },
+    {
+      "id": "3",
+      "name": "Large"
+    },
+    {
+      "id": "4",
+      "name": "Premium"
+    },
+    {
+      "id": "5",
+      "name": "Minivan"
+    },
+    {
+      "id": "6",
+      "name": "SUVs"
+    }
+  ],
+  "carCategoryCars": [
+    {
+      "id": "1",
+      "carId": "1",
+      "categoryCar": "2"
+    },
+    {
+      "id": "2",
+      "carId": "2",
+      "categoryCar": "2"
+    }
+  ],
+  "rents": [
+    {
+      "id": "1",
+      "startDate": "13/9/2021",
+      "finishDate": "15/9/2021",
+      "carId": "2",
+      "clientId": "1",
+      "paymentAmount": 180,
+      "rate": 0
+    },
+    {
+      "id": "c7496d20-350d-45d6-bfee-26b3c283a36b",
+      "startDate": "22/10/2021",
+      "finishDate": "31/10/2021",
+      "carId": "1",
+      "clientId": "2",
+      "paymentAmount": 270,
+      "rate": 3
+    },
+    {
+      "id": "07e1bde6-56fe-4d46-a156-c470d6385aec",
+      "startDate": "28/10/2021",
+      "finishDate": "31/10/2021",
+      "carId": "1",
+      "clientId": "2",
+      "paymentAmount": 180,
+      "rate": 0,
+      "endDate": "31/10/2021"
+    },
+    {
+      "id": "4b170e52-cc84-4346-9e70-9bdf4e2458fe",
+      "startDate": "27/10/2021",
+      "finishDate": "31/10/2021",
+      "carId": "1",
+      "clientId": "1",
+      "paymentAmount": 225,
+      "rate": 0
+    }
+  ],
+  "plans": [
+    {
+      "id": "1",
+      "name": "Regular",
+      "benefits": [
+        "Rent one car",
+        "Custom statistics"
+      ],
+      "price": 20
+    },
+    {
+      "id": "2",
+      "name": "Silver",
+      "benefits": [
+        "Rent three cars",
+        "Custom statistics"
+      ],
+      "price": 40
+    },
+    {
+      "id": "3",
+      "name": "Gold",
+      "benefits": [
+        "Rent up to ten cars",
+        "Custom statistics",
+        "Fault record",
+        "Reminders"
+      ],
+      "price": 60
+    }
+  ],
+  "clientPlan": [
+    {
+      "id": "1",
+      "planId": "1",
+      "clientId": "1"
+    },
+    {
+      "id": "2",
+      "planId": "2",
+      "clientId": "2"
+    },
+    {
+      "id": "3",
+      "planId": "3",
+      "clientId": "3"
+    }
+  ],
+  "favourites": [
+    {
+      "carId": "4",
+      "clientId": "2",
+      "id": "00aa51fd-ea8d-4c10-ad8a-5afb27f06b83"
+    },
+    {
+      "carId": "4",
+      "clientId": "1",
+      "id": "149b3fbd-c8c3-4091-9e06-3de46376e19d"
+    },
+    {
+      "carId": "1",
+      "clientId": "1",
+      "id": "dbf567db-3bff-4fce-8152-f625fdebd70c"
+    }
+  ]
+}

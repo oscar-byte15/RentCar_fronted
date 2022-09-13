@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto 0;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.container-data {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "image content rent";
+  grid-template-columns: 250px minmax(auto, 300px) auto;
+  height: 250px;
+}
+
+.accent {
+  background-color: #FFC107;
+}
+
+img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto 0 auto;
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+}
+
+.car-information {
+  grid-area: content;
+  margin-left: 20px;
+}
+
+span {
+  display: block;
+}
+
+.input-number {
+  width: 70px;
+}
+
+.rent-price {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin: 0;
+}
+
+.color-star {
+  color: #FFC107;
+}
+
+.rent-car-button {
+  margin-top: 20px;
+}
+
+.rent-information {
+  margin-left: auto;
+}
+
+.extra-information {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-divider {
+  margin: 20px 0 20px;
+}
+
+p {
+  margin-top: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.rent {
+  display: flex;
+}
+
+.rent > button {
+  margin: 0 auto 0;
+}
+
+#favorite-button {
+  margin-left: auto;
+}
+
+.actions {
+  display: flex;
+}

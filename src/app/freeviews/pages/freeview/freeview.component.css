@@ -1,0 +1,16 @@
+mat-toolbar {
+  background-color: #2196F3;
+}
+
+img {
+  width: 150px;
+  height: 30px;
+}
+
+a {
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

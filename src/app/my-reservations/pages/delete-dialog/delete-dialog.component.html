@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Delete reserve</h1>
+<div mat-dialog-content>If you delete this reserve, you cannot undo this action</div>
+<div mat-dialog-actions>
+  <button
+    mat-button mat-dialog-close
+  >
+    Close
+  </button>
+
+  <button
+    mat-button
+    (click)="deleteRental()"
+    [mat-dialog-close]="true"
+  >
+    Delete
+  </button>
+</div>

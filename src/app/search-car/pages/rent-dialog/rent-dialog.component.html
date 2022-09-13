@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Rent Car</h1>
+<div mat-dialog-content>
+  <h2>{{ data.car.brand + " " + data.car.model }}</h2>
+  <img src="{{ data.car.imagePath }}" alt="car image">
+
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Rental Date</mat-label>
+    <mat-date-range-input
+      [formGroup]="date"
+      [rangePicker]="pickerDate"
+      [min]="today"
+    >
+      <input matStartDate placeholder="Start date" formControlName="start">
+      <input matEndDate placeholder="End date" formControlName="end">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="pickerDate" ></mat-datepicker-toggle>
+    <mat-date-range-picker #pickerDate ></mat-date-range-picker>
+  </mat-form-field>
+
+  <p>
+    You pay $ {{ getPaymentAmount() }} for {{ getDaysDiff() }} days
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-button
+    color="warn"
+    [mat-dialog-close]="true"
+  >
+    Cancel
+  </button>
+  <button
+    mat-button (click)="rentCar()"
+    [mat-dialog-close]="true"
+  >Rent</button>
+</div>

@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Edit reserve</h1>
+<div mat-dialog-content>
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Rental Date</mat-label>
+    <mat-date-range-input
+      [formGroup]="date"
+      [rangePicker]="pickerDate"
+      [min]="formattedStartDate"
+    >
+      <input matStartDate placeholder="Start date" formControlName="start">
+      <input matEndDate placeholder="End date" formControlName="end">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="pickerDate" ></mat-datepicker-toggle>
+    <mat-date-range-picker #pickerDate ></mat-date-range-picker>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-button mat-dialog-close
+  >
+    Close
+  </button>
+
+  <button
+    mat-button
+    (click)="updateDates()"
+    [mat-dialog-close]="true"
+  >
+    Save
+  </button>
+</div>

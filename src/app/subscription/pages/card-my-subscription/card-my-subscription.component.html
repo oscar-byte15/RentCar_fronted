@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Your currently plan is:</h1>
+  <mat-card *ngIf="plan != undefined">
+    <mat-card-title>{{ plan.name }}</mat-card-title>
+    <mat-card-content>
+      <span>Price: {{ plan.price }}</span>
+      <ul>
+        <li *ngFor="let benefit of plan.benefits">
+          {{ benefit }}
+        </li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        (click)="deletePlan()"
+        mat-raised-button class="accent">
+        Delete Subscription
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

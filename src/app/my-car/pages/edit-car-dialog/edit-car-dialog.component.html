@@ -1,0 +1,60 @@
+<h1 mat-dialog-title>{{ data.edit ? "Edit information" : "New car" }}</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Brand</mat-label>
+    <input matInput [(ngModel)]="data.car.brand">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Model</mat-label>
+    <input matInput [(ngModel)]="data.car.model">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Year</mat-label>
+    <input matInput type="number" [(ngModel)]="data.car.year">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Address</mat-label>
+    <input matInput [(ngModel)]="data.car.address">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Mileage</mat-label>
+    <input matInput type="number" [(ngModel)]="data.car.mileage">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Seating</mat-label>
+    <input matInput type="number" [(ngModel)]="data.car.seating">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Car value</mat-label>
+    <input matInput type="number" [(ngModel)]="data.car.carValueInDollars">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Rent Amount</mat-label>
+    <input matInput type="number" [(ngModel)]="data.car.rentAmountDay">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Extra information</mat-label>
+    <input matInput [(ngModel)]="data.car.extraInformation">
+  </mat-form-field>
+  <div>
+    <label>Transmission: </label>
+    <mat-radio-group [formControl]="transmissionControl">
+      <mat-radio-button value="manual">Manual</mat-radio-button>
+      <mat-radio-button value="automatic">Automatic</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-button
+    color="warn"
+    (click)="cancelOnClick()"
+  >
+    Cancel
+  </button>
+  <button
+    mat-button
+    [mat-dialog-close]="this.data.car"
+    (click)="confirmAction()"
+  >{{ data.edit ? "Edit" : "Add" }}</button>
+</div>

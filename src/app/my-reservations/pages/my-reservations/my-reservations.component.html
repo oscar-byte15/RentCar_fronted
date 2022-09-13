@@ -1,0 +1,77 @@
+<div class="container">
+  <h1>My reservations</h1>
+
+  <!--<table mat-table [dataSource]="rentsData" class="mat-elevation-z8">
+    <ng-container matColumnDef="car">
+      <th mat-header-cell *matHeaderCellDef>Car</th>
+      <td mat-cell *matCellDef="let element">
+        <img mat-card-image class="reservation-image" src="assets/cars-images/{{ element.car.imagePath }}">
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{element.car.brand}} {{element.car.model}}</td>
+    </ng-container>
+    <ng-container matColumnDef="rate">
+      <th mat-header-cell *matHeaderCellDef>Rate</th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="element.rate === 0; else elseTemplate">
+          Pending...
+        </span>
+        <ng-template #elseTemplate>
+          <span>{{element.rate}}</span>
+        </ng-template>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="startDate">
+      <th mat-header-cell *matHeaderCellDef>Start Date</th>
+      <td mat-cell *matCellDef="let element">{{element.startDate}}</td>
+    </ng-container>
+    <ng-container matColumnDef="finishDate">
+      <th mat-header-cell *matHeaderCellDef>Finish Date</th>
+      <td mat-cell *matCellDef="let element">{{element.finishDate}}</td>
+    </ng-container>
+    <ng-container matColumnDef="paymentAmount">
+      <th mat-header-cell *matHeaderCellDef>Payment Amount</th>
+      <td mat-cell *matCellDef="let element">$ {{element.paymentAmount}}</td>
+    </ng-container>
+    <ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button aria-label="Delete rent" (click)="compareDates(element.startDate, element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button
+          *ngIf="element.rate === 0"
+          mat-icon-button
+          aria-label="Rate Owner"
+          [mat-menu-trigger-for]="menu"
+        >
+          <mat-icon>star_border</mat-icon>
+        </button>
+        <mat-menu
+          #menu
+          xPosition="before"
+        >
+          <button
+            mat-menu-item
+            *ngFor="let option of menuOptions"
+            (click)="updateRate(element.id, option.value)"
+          >
+            {{option.value}}
+          </button>
+        </mat-menu>
+        <button
+          mat-icon-button
+          aria-label="Change Date" (click)="changeDates(element.startDate, element.finishDate, element.id, element.paymentAmount)">
+          <mat-icon>edit_calendar</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  </table>
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>-->
+</div>

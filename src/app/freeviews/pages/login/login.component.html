@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Welcome back!</h1>
+  <form id="login-form" [formGroup]="form" (ngSubmit)="submit()">
+    <p
+      *ngIf="wrongEmailOrPassword"
+      id="wrong-email-and-password"
+    >
+      Wrong email and password
+    </p>
+    <div class="d-flex my-3">
+      <img id="user-img" class="mx-auto" src="assets/user.png">
+    </div>
+    <mat-form-field appearance="fill">
+      <mat-label>User name</mat-label>
+      <input matInput name="userName" formControlName="userName">
+      <div *ngIf="form.get('userName')?.errors && form.get('userName')?.dirty">
+        <mat-error *ngIf="form.get('userName')?.hasError('required')">Required</mat-error>
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput name="password" formControlName="password" [type]="showPassword ? 'text' : 'password'">
+      <button mat-button matSuffix type="button" (click)="showPassword = !showPassword">
+        <mat-icon>{{ showPassword ? "visibility" : "visibility_off" }}</mat-icon>
+      </button>
+      <div *ngIf="form.get('password')?.errors && form.get('password')?.dirty">
+        <mat-error *ngIf="form.get('password')?.hasError('required')">Required</mat-error>
+      </div>
+    </mat-form-field>
+    <div class="d-flex">
+      <a mat-button color="primary">I forgot my password</a>
+      <span class="spacer"></span>
+      <button
+        id="login-button"
+        mat-raised-button
+        type="submit"
+        [disabled]="form.invalid"
+      >Login</button>
+    </div>
+  </form>
+</div>

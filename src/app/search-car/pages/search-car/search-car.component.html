@@ -1,0 +1,96 @@
+<mat-drawer-container>
+  <mat-drawer #drawer mode="side" class="primary">
+    <h1>Filters</h1>
+    <mat-divider></mat-divider>
+    <ng-container>
+      <h2>Range of Prices</h2>
+      <ul>
+        <li *ngFor="let price of rangePrices">
+          <mat-checkbox>
+            <span>Less than $ {{ price }}</span>
+          </mat-checkbox>
+        </li>
+      </ul>
+    </ng-container>
+    <mat-divider></mat-divider>
+    <ng-container>
+      <h2>Specifications</h2>
+      <ul>
+        <li *ngFor="let specification of specifications">
+          <mat-checkbox>
+            <span>{{ specification }}</span>
+          </mat-checkbox>
+        </li>
+      </ul>
+    </ng-container>
+    <mat-divider></mat-divider>
+    <ng-container>
+      <h2>Transmissions</h2>
+      <ul>
+        <li *ngFor="let transmission of transmissions">
+          <mat-checkbox>
+            <span>{{ transmission }}</span>
+          </mat-checkbox>
+        </li>
+      </ul>
+    </ng-container>
+    <mat-divider></mat-divider>
+    <ng-container>
+      <h2>Categories</h2>
+      <ul>
+        <li *ngFor="let category of categoriesOfCars">
+          <mat-checkbox>
+            <span>{{ category }}</span>
+          </mat-checkbox>
+        </li>
+      </ul>
+    </ng-container>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div class="actions">
+      <button
+        class="filter-button accent"
+        mat-raised-button (click)="drawer.toggle()"
+      >
+        Filter
+      </button>
+
+      <form [style.fontStyle.px]="15">
+        <mat-form-field appearance="fill">
+          <mat-icon matPrefix>home</mat-icon>
+          <mat-label>Enter your location</mat-label>
+          <input type="text" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-form-field" appearance="fill">
+          <mat-label>Rental Date</mat-label>
+          <mat-date-range-input
+            [formGroup]="date"
+            [rangePicker]="pickerDate"
+            [comparisonStart]="date.value.start"
+            [comparisonEnd]="date.value.end"
+            [min]="today">
+            <input matStartDate placeholder="Start date" formControlName="start">
+            <input matEndDate placeholder="End date" formControlName="end">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="pickerDate"></mat-datepicker-toggle>
+          <mat-date-range-picker #pickerDate></mat-date-range-picker>
+        </mat-form-field>
+
+        <button
+          class="search-button accent"
+          mat-raised-button
+        >
+          Search
+        </button>
+      </form>
+    </div>
+
+    <app-card-car
+      *ngFor="let car of carsData"
+      [car]="car"
+      [clientId]="clientId"
+    ></app-card-car>
+  </mat-drawer-content>
+</mat-drawer-container>

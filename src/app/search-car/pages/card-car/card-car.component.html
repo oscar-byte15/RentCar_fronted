@@ -1,0 +1,28 @@
+<mat-card>
+  <img src="{{ car.imagePath }}" alt="car image">
+  <div class="car-information">
+    <mat-card-title>{{ car.brand }} {{ car.model }}</mat-card-title>
+    <span>Seating: {{ car.seating }}</span>
+    <span>Transmission: {{ car.manual ? "Manual" : "Automatic" }}</span>
+    <span>Mileage: {{ car.mileage }}</span>
+    <span>Year: {{ car.year }}</span>
+    <a [routerLink]="moreInformationUrl">See more</a>
+  </div>
+  <div class="rentInformation">
+    <span>
+      Price for
+      <mat-form-field appearance="fill" class="input-number">
+        <input matInput type="number" placeholder="Ex. 2" min="1" [(ngModel)]="days">
+      </mat-form-field>
+      days
+    </span>
+    <span class="rent-price">$ {{ getPrice() }}</span>
+    <button
+      mat-raised-button
+      class="rent-car-button accent"
+      (click)="openRentDialog()"
+    >
+      Rent Car
+    </button>
+  </div>
+</mat-card>

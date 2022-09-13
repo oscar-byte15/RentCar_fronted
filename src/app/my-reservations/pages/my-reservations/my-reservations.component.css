@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto 0;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.reservation-image {
+  width: 50px;
+}

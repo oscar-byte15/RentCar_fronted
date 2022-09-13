@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="actions">
+    <button mat-raised-button (click)="goBack()">Back</button>
+    <!--<button
+      id="favorite-button"
+      mat-fab
+      [color]="isFavourite ? 'warn' : 'gray'"
+      aria-label=favorite
+      (click)="actionFavourite(favourite.id)"
+    >
+      <mat-icon>favorite_border</mat-icon>
+    </button>-->
+  </div>
+  <mat-divider></mat-divider>
+  <div class="container-data">
+    <img *ngIf="carData.imagePath != null" src="{{ carData.imagePath }}" alt="car image">
+    <div class="car-information">
+      <mat-card-title>{{ carData.brand }} {{ carData.model }}</mat-card-title>
+      <span>Seating: {{ carData.seating }}</span>
+      <span>Transmission: {{ carData.manual ? "Manual" : "Automatic" }}</span>
+      <span>Mileage: {{ carData.mileage }}</span>
+      <span>Year: {{ carData.year }}</span>
+    </div>
+    <div class="rent-information">
+      <span>
+        Price for
+        <mat-form-field appearance="fill" class="input-number">
+          <input matInput type="number" placeholder="Ex. 2" min="1" [(ngModel)]="days">
+        </mat-form-field>
+        days
+      </span>
+      <span class="rent-price">$ {{ getPrice() }}</span>
+      <div class="starts">
+        <h2>Assessment</h2>
+        <mat-icon
+          *ngFor="let i of [1, 2, 3, 4, 5]"
+          [ngClass]="{'color-star': i <= carData.rate}"
+        >
+          star
+        </mat-icon>
+      </div>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="extra-information">
+    <h2>Extra information</h2>
+    <p>
+      {{ carData.extraInformation }}
+    </p>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="rent">
+      <button
+        mat-raised-button
+        class="rent-car-button accent"
+        (click)="openRentDialog()"
+      >
+        Rent Car
+      </button>
+  </div>
+</div>

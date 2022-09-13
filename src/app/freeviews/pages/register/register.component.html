@@ -1,0 +1,155 @@
+<mat-stepper linear class="stepper mx-auto" #stepper>
+  <!-- email and password registration start -->
+  <mat-step [stepControl]="userNameAndPasswordForm">
+    <form class="d-flex flex-column mx-auto" [formGroup]="userNameAndPasswordForm">
+      <ng-template matStepLabel>Username and password</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="userName">
+        <div *ngIf="userNameAndPasswordForm.get('userName')?.errors && userNameAndPasswordForm.get('userName')?.dirty">
+          <mat-error *ngIf="userNameAndPasswordForm.get('userName')?.hasError('required')">Required</mat-error>
+        </div>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <div *ngIf="userNameAndPasswordForm.get('email')?.errors && userNameAndPasswordForm.get('email')?.dirty">
+          <mat-error *ngIf="userNameAndPasswordForm.get('email')?.hasError('required')">Required</mat-error>
+          <mat-error *ngIf="userNameAndPasswordForm.get('email')?.hasError('pattern')">Invalid email</mat-error>
+        </div>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          name="password" [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+        >
+        <button mat-button matSuffix type="button" (click)="showPassword = !showPassword">
+          <mat-icon>{{ showPassword ? "visibility" : "visibility_off" }}</mat-icon>
+        </button>
+        <div *ngIf="userNameAndPasswordForm.get('password')?.errors && userNameAndPasswordForm.get('password')?.dirty">
+          <mat-error *ngIf="userNameAndPasswordForm.get('password')?.hasError('required')">Required</mat-error>
+          <mat-error *ngIf="userNameAndPasswordForm.get('password')?.hasError('pattern')">The password must have at least one capital letter and one number</mat-error>
+        </div>
+      </mat-form-field>
+      <div class="d-flex">
+        <span class="spacer"></span>
+        <a mat-raised-button color="warn" href="">Cancel</a>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="validateUser(stepper)"
+        >
+          Continue
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- email and password registration end -->
+
+  <!-- personal information registration start -->
+  <mat-step [stepControl]="personalInformationForm">
+    <form class="d-flex flex-column mx-auto" [formGroup]="personalInformationForm">
+      <ng-template matStepLabel>Personal information</ng-template>
+      <mat-form-field
+        class="mb-1"
+        hintLabel="Max 30 characters"
+        appearance="fill"
+      >
+        <mat-label>Names</mat-label>
+        <input
+          matInput
+          #inputNames
+          maxlength="30"
+          formControlName="names"
+        >
+        <mat-hint align="end">{{ inputNames.value?.length || 0 }}/30</mat-hint>
+        <div *ngIf="personalInformationForm.get('names')?.errors && personalInformationForm.get('names')?.dirty">
+          <mat-error *ngIf="personalInformationForm.get('names')?.hasError('required')">Required</mat-error>
+          <mat-error *ngIf="personalInformationForm.get('names')?.hasError('maxLength')">Max 30 characters</mat-error>
+        </div>
+      </mat-form-field>
+      <mat-form-field
+        class="mb-1"
+        hintLabel="Max 30 characters"
+        appearance="fill"
+      >
+        <mat-label>Lastnames</mat-label>
+        <input
+          matInput
+          #inputLastNames
+          maxlength="30"
+          formControlName="lastNames"
+        >
+        <mat-hint align="end">{{ inputLastNames.value?.length || 0 }}/30</mat-hint>
+        <div *ngIf="personalInformationForm.get('lastNames')?.errors && personalInformationForm.get('lastNames')?.dirty">
+          <mat-error *ngIf="personalInformationForm.get('lastNames')?.hasError('required')">Required</mat-error>
+          <mat-error *ngIf="personalInformationForm.get('lastNames')?.hasError('maxLength')">Max 30 characters</mat-error>
+        </div>
+      </mat-form-field>
+      <mat-form-field
+        class="mb-1"
+        hintLabel="Max 50 characters"
+        appearance="fill"
+      >
+        <mat-label>Address</mat-label>
+        <input
+          matInput
+          #inputAddress
+          maxlength="50"
+          formControlName="address"
+        >
+        <mat-hint align="end">{{ inputAddress.value?.length || 0 }}/50</mat-hint>
+        <div *ngIf="personalInformationForm.get('address')?.errors && personalInformationForm.get('address')?.dirty">
+          <mat-error *ngIf="personalInformationForm.get('address')?.hasError('required')">Required</mat-error>
+          <mat-error *ngIf="personalInformationForm.get('address')?.hasError('maxLength')">Max 50 characters</mat-error>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="mb-1" appearance="fill">
+        <mat-label>Cellphone number</mat-label>
+        <input
+          matInput
+          #inputCellphoneNumber
+          maxlength="9"
+          formControlName="cellphoneNumber"
+        >
+        <mat-hint align="end">{{ inputCellphoneNumber.value?.length || 0 }}/9</mat-hint>
+        <div *ngIf="personalInformationForm.get('cellphoneNumber')?.errors && personalInformationForm.get('cellphoneNumber')?.dirty">
+          <mat-error *ngIf="personalInformationForm.get('cellphoneNumber')?.hasError('required')">Required</mat-error>
+          <mat-error *ngIf="personalInformationForm.get('cellphoneNumber')?.hasError('pattern')">Invalid cellphone number</mat-error>
+        </div>
+      </mat-form-field>
+      <div class="d-flex">
+        <span class="spacer"></span>
+        <a mat-raised-button color="warn" href="">Cancel</a>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="registerClient(stepper)"
+        >
+          Continue
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- persona information registration end -->
+
+  <!-- registration completed start -->
+  <mat-step>
+    <ng-template matStepLabel>Finish</ng-template>
+
+    <div class="d-flex flex-column">
+      <h1 class="mx-auto my-3">Thank you for registering with eRentCar</h1>
+      <p class="mx-auto mb-3">Login to continue</p>
+
+      <a
+        mat-raised-button
+        class="mx-auto"
+        color="primary"
+        routerLink="/login"
+      >Sign in</a>
+    </div>
+  </mat-step>
+  <!-- registration completed end -->
+</mat-stepper>

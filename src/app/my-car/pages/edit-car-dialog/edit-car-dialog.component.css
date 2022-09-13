@@ -1,0 +1,13 @@
+div.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+}
+
+div.mat-dialog-actions {
+  display: flex;
+  justify-content: right;
+}
+
+.mat-radio-button {
+  margin: 0 12px;
+}

@@ -1,0 +1,23 @@
+mat-card {
+  display: flex;
+  grid-template-areas: "image content rent";
+  grid-template-columns: 200px minmax(auto, 300px) auto;
+}
+
+mat-card > img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto 0 auto;
+  grid-area: image;
+  width: 50%;
+  height: 50%;
+}
+
+.car-information {
+  grid-area: content;
+  margin-left: 20px;
+}
+span {
+  display: block;
+}

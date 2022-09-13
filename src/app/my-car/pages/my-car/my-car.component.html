@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="header">
+    <h1>My cars</h1>
+    <button
+      mat-raised-button
+      class="accent"
+      (click)="openEditDialogCar()"
+    >New car</button>
+  </div>
+  <mat-divider></mat-divider>
+  <app-card-my-car
+    *ngFor="let car of clientCars"
+    [car]="car"
+    [clientId]="clientId"
+  >
+  </app-card-my-car>
+</div>

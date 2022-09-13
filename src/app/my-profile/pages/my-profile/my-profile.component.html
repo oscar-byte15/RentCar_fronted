@@ -1,0 +1,29 @@
+<mat-card-title>My Profile</mat-card-title>
+
+<mat-card-content class="profile-style">
+  <div style="position: fixed">
+    <button color="primary" mat-raised-button (click)="editDialogClient()"><mat-icon>edit</mat-icon></button>
+  </div>
+  <div class="information-style">
+    <img mat-card-avatar src="assets/users-images/{{ clientUsers.imagePath }}" alt="user image">
+    <h1>{{ clientUsers.names }}</h1>
+    <mat-label>Location</mat-label>
+    <mat-card-content><mat-icon style="color: red">room</mat-icon>{{ clientUsers.address }}</mat-card-content>
+    <mat-label>Comments</mat-label>
+    <mat-card-content *ngFor="let comment of userComments"><mat-icon style="color: darkgray">comment</mat-icon>{{comment.comment}}</mat-card-content>
+    <mat-label>Languages</mat-label>
+    <mat-card-content  *ngFor="let language of clientLanguages" class="language-style"><mat-icon>language</mat-icon>{{language.languageId}}</mat-card-content>
+    <mat-label>Phone Number</mat-label>
+    <mat-card-content><mat-icon>phone</mat-icon>{{ clientUsers.cellphoneNumber}}</mat-card-content>
+    <mat-label>Calification</mat-label>
+    <mat-card-content>Your average response time: <strong>{{ clientUsers.responseTime }}min</strong><mat-icon style="color: limegreen">av_timer</mat-icon></mat-card-content>
+    <mat-card-content>Your average of responsability: <strong>{{ clientUsers.averageResponsibility }}%</strong><mat-icon style="color: limegreen">thumb_up</mat-icon></mat-card-content>
+    <mat-label>Social Networks</mat-label><br>
+    <a *ngFor="let social of clientSocial" href="{{ social.address }}"><mat-icon style="color: #3b5998">{{ social.socialname }}</mat-icon></a><br>
+  </div>
+  <div class="car-style">
+    <h1> My cars </h1>
+    <app-view-car *ngFor="let car of userCars" [userCar]="car" [userId]="currentUser"></app-view-car>
+  </div>
+
+</mat-card-content>
